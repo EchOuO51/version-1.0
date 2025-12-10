@@ -1,0 +1,112 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww29200\viewh15760\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 <!DOCTYPE html>\
+<html lang="zh">\
+<head>\
+<meta charset="UTF-8">\
+<title>\uc0\u21697 \u29260 \u27963 \u21160 \u20915 \u31574 \u21161 \u25163 </title>\
+<style>\
+    body \{ font-family: Arial, sans-serif; padding: 30px; background: #f7f7f7; \}\
+    h1 \{ font-size: 26px; \}\
+    .block \{ background: white; padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); \}\
+    button \{ padding: 12px 20px; margin-top: 10px; background: #4a7afe; border: none; border-radius: 6px; color: white; cursor: pointer; \}\
+    button:hover \{ background: #2f5bda; \}\
+    .result \{ margin-top: 20px; padding: 20px; background: #fff5cc; border-radius: 10px; font-size: 18px; \}\
+</style>\
+</head>\
+<body>\
+\
+<h1>\uc0\u21697 \u29260 \u27963 \u21160 \u20915 \u31574 \u21161 \u25163 </h1>\
+\
+<div class="block">\
+    <p>1. \uc0\u21697 \u29260 \u26159 \u21542 \u24895 \u24847 \u37197 \u21512 \u27963 \u21160 \u65311 </p>\
+    <button onclick="step1(true)">\uc0\u24895 \u24847 </button>\
+    <button onclick="step1(false)">\uc0\u19981 \u24895 \u24847 </button>\
+</div>\
+\
+<div id="step2" class="block" style="display:none;">\
+    <p>2. \uc0\u21697 \u29260 \u20307 \u37327 \u22914 \u20309 \u65311 </p>\
+    <button onclick="step2('large')">\uc0\u22823 \u20307 \u37327 </button>\
+    <button onclick="step2('small')">\uc0\u23567 \u20307 \u37327 </button>\
+</div>\
+\
+<div id="step3" class="block" style="display:none;">\
+    <p>3. \uc0\u21697 \u29260 \u36816 \u33829 \u33021 \u21147 \u22914 \u20309 \u65311 </p>\
+    <button onclick="step3('strong')">\uc0\u24378 \u36816 \u33829 </button>\
+    <button onclick="step3('normal')">\uc0\u19968 \u33324 \u36816 \u33829 </button>\
+</div>\
+\
+<div id="step4" class="block" style="display:none;">\
+    <p>4. \uc0\u26159 \u21542 \u26377 \u26032 \u21697 \u65311 </p>\
+    <button onclick="step4(true)">\uc0\u26377 \u26032 \u21697 </button>\
+    <button onclick="step4(false)">\uc0\u26080 \u26032 \u21697 </button>\
+</div>\
+\
+<div id="result" class="result" style="display:none;"></div>\
+\
+<script>\
+function step1(willing) \{\
+    if (!willing) \{\
+        document.getElementById("result").style.display = "block";\
+        document.getElementById("result").innerHTML = "\uc0\u10060  \u19981 \u36866 \u21512 \u21442 \u21152 \u21697 \u29260 \u27963 \u21160 \u65288 \u38656 \u35201 \u21028 \u26029 \u26159 \u21542 \u26377 \u27835 \u29702 \u39118 \u38505 \u65289 ";\
+        hideSteps(2,3,4);\
+        return;\
+    \}\
+    document.getElementById("step2").style.display = "block";\
+\}\
+\
+function step2(size) \{\
+    window.brandSize = size;\
+    document.getElementById("step3").style.display = "block";\
+\}\
+\
+function step3(ability) \{\
+    window.brandAbility = ability;\
+    document.getElementById("step4").style.display = "block";\
+\}\
+\
+function step4(hasNew) \{\
+    let size = window.brandSize;\
+    let ability = window.brandAbility;\
+    let resultText = "";\
+\
+    if (size === "large" && ability === "strong") \{\
+        resultText = "\uc0\u25512 \u33616 \u27963 \u21160 \u65306 \u11088  \u36229 \u32423 \u21697 \u29260 \u26085  / \u36229 \u21697 ";\
+    \} \
+    else if (size === "large" && ability === "normal" && hasNew) \{\
+        resultText = "\uc0\u25512 \u33616 \u27963 \u21160 \u65306 \u55357 \u56524  \u21333 \u21697 \u29260 \u19978 \u26032 \u20102 ";\
+    \}\
+    else if (size === "large" && ability === "normal" && !hasNew) \{\
+        resultText = "\uc0\u25512 \u33616 \u27963 \u21160 \u65306 \u55357 \u56546  \u22823 \u29260 \u38044 \u24800 ";\
+    \}\
+    else if (size === "small" && ability === "normal" && hasNew) \{\
+        resultText = "\uc0\u25512 \u33616 \u27963 \u21160 \u65306 \u55357 \u57042  \u22810 \u21697 \u29260 \u19978 \u26032 \u20102 ";\
+    \}\
+    else if (size === "small" && ability === "normal" && !hasNew) \{\
+        resultText = "\uc0\u25512 \u33616 \u27963 \u21160 \u65306 \u55357 \u57313  \u26032 \u21697 \u24369 \u65292 \u19981 \u24314 \u35758 \u21442 \u21152 \u22823 \u22411 \u21697 \u29260 \u27963 \u21160 ";\
+    \}\
+    else if (size === "small" && ability !== "strong") \{\
+        resultText = "\uc0\u25512 \u33616 \u27963 \u21160 \u65306 \u55356 \u57137  \u26032 \u21697 \u29260 \u33829 \u38144  MVP\u65288 \u25206 \u25345 \u25104 \u38271 \u22411 \u26032 \u21830 \u23478 \u65289 ";\
+    \}\
+\
+    document.getElementById("result").style.display = "block";\
+    document.getElementById("result").innerHTML = resultText;\
+\}\
+\
+function hideSteps() \{\
+    document.getElementById("step2").style.display = "none";\
+    document.getElementById("step3").style.display = "none";\
+    document.getElementById("step4").style.display = "none";\
+\}\
+</script>\
+\
+</body>\
+</html>\
+}
